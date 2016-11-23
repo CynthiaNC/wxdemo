@@ -1,0 +1,143 @@
+-var srcPath = './build/'
+-var imgPath = './src/images/'
+-var navListData = ['首页','外包平台','团队孵化','增值服务','代码市场','合作交流','求贤若渴','一线观察']
+-var items = [{title:'一键委托开发',subtitle:'你只需提供商业诉求，剩下的由芦苇科技来帮您完成。一键委托服务从需求梳理、项⽬询 价、项目进度把控、代码管理、项目移交、后期维护',part:'one'}, {title:'技术团队孵化',subtitle:'全程监管技术培训及开发，量身打造深度配合式专属团队。',part:'two'}, {title:'增值服务',subtitle:'辅助融资、运营推广、资源整合，全方位助您乘风破浪。',part:'three'}, {title:'代码市场',subtitle:'为广大开发者、设计师等身怀绝技的人们提供自由接包平台； 为厂商提供最佳解决方案及配套人员，全程跟进交易流程，更低价更安心。',part:'four'}, ]//必须要一行，不然jade会识别不了
+
+-var partOneDatas = [{icon:'icon-anzhuodingzhikaifa',listTitle:'安卓定制开发',desc:['完美人机交互与程序优化，高硬件适应性']},{icon:'icon-iOSdingzhikaifa',listTitle:'iOS定制开发',desc:['一站式完整的开发与 推广流畅的用户体验']},{icon:'icon-Html5dingzhikaifa',listTitle:'Html5开发',desc:['支持跨平台离线使用 更具创意，开发更敏捷']},{icon:'icon-weixinkaifa',listTitle:'微信开发',desc:['微信用户挖掘，微商城、 微网站、营销定制']},{icon:'icon-weixinxiaochengxu',listTitle:'微信小程序',desc:['丰富的开发经验与实践案例， 助你灵活应对各种应用场景']},{icon:'icon-chanpinsheji',listTitle:'产品设计',desc:['深入用户与一线互联市场， 提供一站式个性化定制']}];
+-var partTwoDatas = [{icon:'icon-chuangyiwuxianshejifan bg hexagon',listTitle:'创意无限设计范',desc:['卓越的追求，处女座般强迫症的设计，切合客户的真实需求，最合适的推广设计，跨越平凡，力臻完美。'],listSubTitle:'DESIGN'},{icon:'icon-duonianhulianwangkaifajingyan bg rectangle',listTitle:'多年互联网开发经验',desc:['专业技术架构，专注于技术开发，努力打造更优秀的团队。力求极致，追求完美，最具创意的想法。'],listSubTitle:'PROFESSION'},{icon:'icon-jishuhehuoren bg circle',listTitle:'技术合伙⼈',desc:['做最默契的合伙人，你准备好了吗?'],listSubTitle:'PARTNER'}];
+-var partThreeDatas = [{icon:'icon-chuangyisheji',listTitle:'创意设计',desc:['logo设计','微标设计','图标设计','小新设计']}, {icon:'icon-shangbiaozhuce',listTitle:'商标注册',desc:['担保注册','快速网申']}, {icon:'icon-shichangtiaocha',listTitle:'市场调查',desc:['用户调查','产品调查','需求评估','概念测试']}, {icon:'icon-chanpinsheji2',listTitle:'产品设计',desc:['UI设计','原型绘制','产出demo']}, {icon:'icon-rongzifuzhu',listTitle:'融资辅助',desc:['产品方案','市场战略','营销推广','融资引荐']}, {icon:'icon-ziyuanzhenghe',listTitle:'资源整合',desc:['渠道整合','投放方案','跨平台联动']}, {icon:'icon-yingxiaotuiguang',listTitle:'营销推广',desc:['产品包装','营销方案','推广投放','品牌塑造']}, {icon:'icon-yunyingweihu',listTitle:'运营维护',desc:['用户维护','活动运营','技术运维','CRM系统']}];
+-var partFourDatas = [{icon:'icon-chuangyezhe',listTitle:'创业者、企业',listSubTitle:'(找外包 招兼职 找顾问)',bt:'我要发外包',desc:['一旦有新的外包信息，将会以邮件的形式发给所有人'],other:'float-l'},{icon:'icon-jiaoyishichang',listTitle:'市场交易'},{icon:'icon-shouyiren',listTitle:'程序员、设计师、PM等',listSubTitle:'(接私活 做兼职 当顾问)',bt:'我要接外包',desc:['我们很快加你，并帮你一起得到最佳发包方案'],other:'float-r'}];
+
+-var partOneCLasses = {listClass:'partOne float-l ',listTitleClass:'listTitleOne',listSubTitleClass:'',descClass:'descOne',other:'shadowOne'}
+-var partTwoCLasses = {listClass:'partTwo float-l ',listTitleClass:'listTitleTwo',listSubTitleClass:'',descClass:'descTwo',other:'shadowTwo'}
+-var partThreeCLasses = {listClass:'partThree float-l',listTitleClass:'listTitleThree',listSubTitleClass:'',descClass:'descThree',otherLayout:'0'}
+-var partFourCLasses = {listClass:'partFour',listTitleClass:'listTitleFour',listSubTitleClass:'listSubTitleFour',descClass:'descFour',otherLayout:'1'}
+
+-var footDatas = [{dir:'all-left',icons:[],desc:{footTitle:'CONTACT',desc1:'地址：广东省广州市天河区中山大道379号 联合社区6栋6313',desc2:'电话：020-29864682',desc3:'邮箱：COO@talkmoney.cn'}}, {dir:'center',icons:['icon-logo','icon-luwei'],desc:{comName:'广州芦苇信息科技有限公司','cp-r1':'copyright © 2016 广州芦苇信息科技有限公司 版权所有','cp-r2':' 粤ICP备16030475号'}}, {dir:'all-right',icons:[],desc:{footTitle:'Link',footSubTitle:'技术研发',desc1:'安卓开发  iOS开发  Html5开发  微信开发  微信小程序',footSubTitle2:'核心服务',desc2:'技术研发  增值服务  团队孵化  代码市场'}}]
+
+//分为四个部分
+mixin part(title,subtitle,className)
+    div.part(class=className)
+        .title= title
+        .subtitle= subtitle
+        if block
+            block
+
+mixin navList(className,list)
+    ul.nav
+        each item,index in list
+            li(class=className)=  item
+                hr.hr-in-nav(class={other:index ==0})
+
+mixin styleLink(path)
+    link(type="text/css" rel="stylesheet" href= path)
+
+mixin partFour(data)
+    -var listClass = partFourCLasses.listClass
+    -var listTitleClass = partFourCLasses.listTitleClass
+    -var listSubTitleClass = partFourCLasses.listSubTitleClass
+    -var descClass =partFourCLasses.descClass
+
+     div(class=listClass)(class=data.other)
+            div.icon.iconfont(class=data.icon)
+            div.listTitle(class=listTitleClass)= data.listTitle
+            if data.listSubTitle
+                div.listSubTitle(class=listSubTitleClass)= data.listSubTitle
+            div.bt= data.bt
+            for item in data.desc
+                div.desc(class=descClass)= item
+            if partFourCLasses.other
+                div(class=partFourCLasses.other)
+
+
+
+mixin partList(classes,listData)
+    // 抽取出来每一part都有图标，短描述，长描述，设定不同的class应用到不同的div显示中
+    //每一part的列表显示方式不同listClass有一行三个一行四个的
+    //每一行中的每一部分有divClass该个div的显示（边框什么的）,图标，短描述（listTitle公用，listTitleClass异处）样式...
+    -var listClass = classes
+    -var listTitleClass = classes.listTitleClass
+    -var listSubTitleClass = classes.listSubTitleClass
+    -var descClass =classes.descClass
+
+    if classes.listClass
+        -var listClass = classes.listClass
+    if classes.otherLayout == 1
+            +partFour(listData[0])
+            div.middle
+                div.icon.iconfont(class=listData[1].icon)
+                div.content= listData[1].listTitle
+            +partFour(listData[2])
+    else
+        each data in listData
+            if classes.otherLayout == 0
+                   div(class=listClass)
+                        div.main.float-l
+                            div.icon.iconfont(class=data.icon)
+                            div.listTitle(class=listTitleClass)= data.listTitle
+                        div.desc
+                            for item in data.desc
+                                li(class=descClass)
+                                    //.point
+                                    ='·'+item
+                        if classes.other
+                            div(class=classes.other)
+            else
+                div(class=listClass)
+                    div.icon.iconfont(class=data.icon)
+                    div.listTitle(class=listTitleClass)= data.listTitle
+                    if data.listSubTitle
+                        div.listSubTitle(class=listSubTitleClass)= data.listSubTitle
+                    for item in data.desc
+                        div.desc(class=descClass)= item
+                    if classes.other
+                        div(class=classes.other)
+
+
+
+mixin subPart(index)
+    case index
+        when 'one'
+            +partList(partOneCLasses,partOneDatas)
+        when 'two'
+            +partList(partTwoCLasses,partTwoDatas)
+        when 'three'
+            +partList(partThreeCLasses,partThreeDatas)
+        when 'four'
+            +partList(partFourCLasses,partFourDatas)
+
+
+
+mixin footPart
+    div.content
+        for item in footDatas
+            div.content-part(class=item.dir)
+                for icon in item.icons
+                    div.icon.iconfont(class=icon)
+                for desc,descClass in item.desc
+                    div(class=descClass)= desc
+
+
+
+head
+    +styleLink("./src/font/iconfont.css")
+    +styleLink("app.css")
+    
+body
+    .top
+        img.float-l(src=imgPath + 'logo.jpg')
+        +navList('nav-list',navListData)
+    .banner
+        img(src=imgPath + 'background.jpg')
+        each item,index in items
+            if(index == 1 || index == 3)
+                div.grey
+                    +part(item.title,item.subtitle)
+                        +subPart(item.part) // include 只能添加准确的文件/路径名，不能用变量
+            else
+                +part(item.title,item.subtitle)
+                    +subPart(item.part) // include 只能添加准确的文件/路径名，不能用变量
+    .foot
+        +footPart
+
+    script(src='bundle.js')  

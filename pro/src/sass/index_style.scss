@@ -1,0 +1,426 @@
+@import "index_definition";
+@import "public_style";
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Microsoft Yahei";
+}
+
+.top {
+    @include contentPage;
+
+    display: table;
+}
+.nav {
+    display: inline-block;
+    
+    margin: 0;
+    width: $navRealWidth;
+}
+.nav-list {
+    @extend .float-l;
+    @include paddingV(16px,0);
+    
+    list-style: none;
+    
+    border: $navListBorder solid #e6e2e2;
+    width: ($navListWidth/$navListNum);
+    
+    text-align: center;
+    
+    color: $normalColor;
+    
+    &:hover {
+        border-color: $normalColor;
+    
+        color: white;
+        background-color: $normalColor;
+        hr {
+            border-color: orange;
+        }
+    }
+}
+.hr-in-nav {
+    margin: 3px 0 0 17px;
+    border-style: solid;
+    border-color: #{$normalColor};
+    width: 13px;
+}
+.other {
+    margin: 3px 0 0 33px;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.part {
+    @include contentPage;
+
+    padding-bottom: 60px;
+    
+    text-align: center;
+
+    &:after {
+        /* 为什么要写在after哩呢？如果只在父元素.part里面加个clear:both就可以了，但是在after里一定要display/clear/content三者不可缺一才清除到浮动，why？ */
+        display: block;
+        clear: both;
+        
+        content: '';
+    }
+}
+.title {
+    padding-top: 141px - 23px;
+    padding-bottom: 23px;
+
+    font-size: 32px;
+}
+.subtitle {
+    margin: 0 ($pageWidth - $subTitleContentWidth)/2;
+    margin-bottom: 37px;
+    border-top: $subTitleBorderValue;
+    border-bottom: $subTitleBorderValue;
+    padding: 5px;
+
+    font-size: 18px;
+    line-height: 30px;
+
+    color: $subTitleColor;
+}
+
+
+.partOne {
+    position: relative;
+
+    padding: 0 $partOneListPadding;
+    width: $partOneListWidth;
+    height: 297px;
+
+    background-image: url('/src/images/hexagon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0px;
+
+    .icon {
+        @extend .white;
+
+            padding: 53px 0;
+        
+            font-size: 61px;
+    }
+}
+.listTitleOne {
+    font-size: 22px;
+
+    color: #4d4d4d;
+}
+.descOne {
+    margin-top: 15px;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    color: $greyLight;
+}
+.shadowOne {
+    position: absolute;
+    top:75px;
+    left:107px;
+    z-index: -1;
+
+    border-right: 5px solid red;
+    border-left: 5px solid red;
+    -webkit-border-image: -webkit-linear-gradient(#F5F5F5, rgba(0, 0, 0, 0)) 16 39%;/* boder渐变效果：不知道后面那两个值是什么，但是调成这个值目前的应用效果最好 */
+    padding:0 1px;
+    width:148px;
+    height:100px;
+
+    background-image: -webkit-linear-gradient(top, #DBDBDB, #ffffff 90%);
+    background-clip: content-box;/* 属性规定背景的绘制区域 padding-box border-box content-box */
+
+    -webkit-transform: skew(-3deg) rotate(-27deg); /* Safari 和 Chrome */
+    -moz-transform: skew(-3deg) rotate(-27deg); /* Firefox */
+    -ms-transform: skew(-3deg) rotate(-27deg); /* Internet Explorer */
+    -o-transform: skew(-3deg) rotate(-27deg); /* Opera */
+    transform: skew(-3deg) rotate(-27deg);
+}
+
+
+.partTwo {
+    position:relative;
+
+    margin:60px-37px 40px 69px;/* 60是总共的，37是subtiltle的一个margin-bottom */
+    padding-top: $partTwoListPaddingTop;
+    padding-left: $partTwoListPaddingLR;
+    padding-right: $partTwoListPaddingLR;
+    width: $partTwoListWidth - 2*$partTwoListPaddingLR;
+    height: $partTwoListHeight - $partTwoListPaddingTop;
+
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+
+    background-color: white;
+}
+.bg {
+    position: absolute;
+    top: -15px;
+    right: 27px;
+
+    padding: 40px 0;
+    width: 110px;
+    height: 110px;
+    
+    font-size: 60px;
+    text-align: center;
+
+    color: $orange;
+    background-repeat: no-repeat;
+}
+.hexagon {
+    width: 97px;
+
+    background-image: url('/src/images/hexagon2.png');
+}
+.rectangle{
+    background-image: url('/src/images/img5.png');
+}
+.circle{
+    background-image: url('/src/images/img6.png');
+}
+
+.listTitleTwo {
+    clear: both;
+
+    color: #4d4d4d;
+}
+.listSubTitle{
+    color: $greyLight;
+}
+.descTwo {
+    margin: 10px 0;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    color: $greyLight;
+}
+
+.partThree {
+    position: relative;
+
+    margin: 0 $partThreeListMargin 27px;
+    border: 1px solid #F0F2F4;
+    padding: $partThreeListPaddingLRTB;
+    width: $partThreeListWidth - 2*$partThreeListBorder - 2*$partThreeListPaddingLRTB;
+    height: $partThreeListHeight - 2*$partThreeListBorder - 2*$partThreeListPaddingLRTB;
+    
+    .icon {
+        font-size: 65px;
+        
+        color: $orange;
+    }
+
+    .desc{
+        float: right;
+        
+        text-align: left;
+
+        color: $greyLight;
+    }
+}
+.main {
+
+}
+.main:after {
+    display: block;
+    float: right;
+
+    margin-top: -102px;
+    margin-right: -17px;
+    border: 1px solid #F0F2F4;
+    width: 0px;
+    height: 106px;
+
+    content: '';
+}
+.listTitleThree{
+    padding-top: 10px;
+
+    font-size: 20px;
+}
+.point {
+    display:inline-block;
+
+    margin-bottom: 4px;
+    margin-right: 4px;
+    border: 1px solid $greyLight;
+    width: 1px;
+    height: 1px;
+    
+    background-color: $greyLight;
+}
+.descThree {
+    list-style: none;
+    
+    margin-left: -79px;
+    height: ($partThreeListHeight - 2*$partThreeListBorder - 2*$partThreeListPaddingLRTB)/4;
+}
+
+.partFour {
+    display: inline-block;
+    
+    margin: 81px-37px 0 86px;
+    padding: 0 ( ($pageWidth/3)  - 200px)/2;
+    width: 200px;
+
+    .icon {
+        font-size: 80px;
+
+        color: $greyLight;
+    }
+
+}
+.listTitleFour {
+    margin: 5px 0;
+
+    font-size: 18px;
+}
+.listSubTitleFour {
+    margin: 5px 0;
+
+    font-size: 16px;
+    line-height: 20px;
+
+}
+.bt {
+    margin: 15px auto 5px;
+    border-radius: 19px;
+    padding: 5px 15px;
+    width: 142px - 30px;
+    
+    font-size: 18px;
+
+    color: white;
+    background-color: $orange;
+}
+.descFour {
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $greyLight;
+}
+.middle {
+    float: left;
+
+    margin: 0 -105px;
+    width: 508.33px;
+    height: 300px;
+
+    color: $orange;
+    background-image: url('/src/images/img4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .icon {
+        padding-top: 94px;
+
+        font-size: 65px;
+
+        &:before {
+            display: block;
+        }
+    }
+    .content {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+.foot {
+    @extend .black;
+
+    padding: 50px 0 25px;
+    height: 30%;
+    .content {
+        margin: 0 auto;
+        width: $pageWidth;
+    }
+    .content-part {
+        width: (($pageWidth - 30px)/3);
+        color: white;
+    }
+    .center {
+        width: ((($pageWidth - 30px)/3) + 30px);
+    }
+}
+.icon-logo {
+    @extend .orange;
+    font-size: 30px;
+}
+.icon-luwei {
+    font-size: 50px;
+}
+.footTitle {
+    @extend .orange;
+
+    font-size: 32px;
+}
+.desc1,.desc2,.desc3 {
+    margin-bottom: 10px ;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $greyLight;
+}
+.footSubTitle2,.footSubTitle,.comName {
+    font-size: 20px;
+
+    color: $greyLight;
+}
+.cp-r1,.cp-r2 {
+    font-size: 14px;
+
+    color: #666666;
+}
+.comName {
+    font-size: 14px;
+}
+
+
+/* CSS六边形
+.hexagon {
+    width: 100px;
+    height: 55px;
+    background: red;
+    position: relative;
+}
+.hexagon:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid red;
+}
+.hexagon:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid red;
+}
+
+*/
+

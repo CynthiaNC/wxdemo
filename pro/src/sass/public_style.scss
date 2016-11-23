@@ -1,0 +1,49 @@
+.float-l {
+    float: left;
+}
+.float-r {
+    float: right;
+}
+
+.clearfix:after {
+　　display: block;
+　　clear: both;
+　　overflow: hidden;
+
+　　height: 0;
+
+　　font-size: 0;
+
+　　content: '';
+}
+
+.white {
+    color: white;
+}
+.grey {
+    background-color: #F0F2F4;
+}
+.black {
+    background-color: #292E31;
+}
+.orange{
+    color: #FF7800;
+}
+
+.all-left {
+    float: left;
+
+    text-align: left;
+}
+
+.center {
+    float: left;
+
+    text-align: center;
+}
+
+.all-right {
+    float: right;
+
+    text-align: right;
+}

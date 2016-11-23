@@ -1,0 +1,51 @@
+$pageWidth: 1000px;/* 可视宽度(中间部分) */
+
+$greyLight: #979797;
+$orange: #FF7800;
+
+$normalColor: grey;
+$hoverColor: red;
+$navWidth: 840px;
+$navRealWidth: $navWidth - 40px;/* 40px是padding-left */
+$navListNum: 8;
+$navListBorder: 1px;
+$navListWidth: $navRealWidth - $navListNum*$navListBorder*2;
+
+$subTitleColor: #979797;
+$subTitleContentWidth: 720px;
+$subTitleBorderValue: 1px solid #D3D3D3;
+
+$partOneListWidth: 144px;
+$partOneListPadding: (($pageWidth/3) - $partOneListWidth)/2;
+
+$partTwoListWidth: 230px; /* inlcuding padding */
+$partTwoListHeight: 320px;/* inlcuding padding */
+$partTwoListPaddingLR: 25px;
+$partTwoListPaddingTop: 119px;
+
+$partThreeListWidth: 233px; /* inlcuding padding */
+$partThreeListHeight: 156px;/* inlcuding padding */
+$partThreeListBorder: 1px;
+$partThreeListMargin: (($pageWidth/4) - $partThreeListWidth)/2;
+
+$partThreeListPaddingLRTB: 20px;
+$partThreeListPaddingTop: 119px;
+
+
+@mixin paddingV($lr,$tb) {
+    padding: $lr $tb;
+}
+
+@mixin contentPage{
+    margin: 0 auto;
+    width: $pageWidth;
+}
+
+
+@function chu($m,$n) {
+    @return ($m - 0px);
+}
+
+
+
+
