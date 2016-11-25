@@ -1,0 +1,43 @@
+include template.pug
+
+mixin styleLink(path)
+    link(type="text/css" rel="stylesheet" href= path)
+
+
+//分为四个部分
+mixin part(title,subtitle,className)
+    div.part(class=className)
+        .title= title
+        .subtitle= subtitle
+        if block
+            block
+
+
+mixin navList(className,list)
+    ul.nav
+        each item,index in list
+            li(class=className)=  item
+                hr.hr-in-nav(class={other:index ==0})
+
+
+mixin subPart(index)
+    case index
+        when 'one'
+            +partList(partOneCLasses,partOneDatas)
+        when 'two'
+            +partList(partTwoCLasses,partTwoDatas)
+        when 'three'
+            +partList(partThreeCLasses,partThreeDatas)
+        when 'four'
+            +partList(partFourCLasses,partFourDatas)
+
+
+mixin footPart
+    div.content
+        for item in footDatas
+            div.content-part(class=item.dir)
+                for icon in item.icons
+                    div.icon.iconfont(class=icon)
+                for desc,descClass in item.desc
+                    div(class=descClass)= desc
+

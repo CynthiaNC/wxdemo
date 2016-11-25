@@ -1,0 +1,131 @@
+mixin partFour(data)
+    -var listClass = partFourCLasses.listClass
+    -var listTitleClass = partFourCLasses.listTitleClass
+    -var listSubTitleClass = partFourCLasses.listSubTitleClass
+    -var descClass =partFourCLasses.descClass
+
+     div(class=listClass)(class=data.other)
+            div.icon.iconfont(class=data.icon)
+            div.listTitle(class=listTitleClass)= data.listTitle
+            if data.listSubTitle
+                div.listSubTitle(class=listSubTitleClass)= data.listSubTitle
+            div.bt= data.bt
+            for item in data.desc
+                div.desc(class=descClass)= item
+            if partFourCLasses.other
+                div(class=partFourCLasses.other)
+
+
+
+mixin partList(classes,listData)
+    // 抽取出来每一part都有图标，短描述，长描述，设定不同的class应用到不同的div显示中
+    //每一part的列表显示方式不同listClass有一行三个一行四个的
+    //每一行中的每一部分有divClass该个div的显示（边框什么的）,图标，短描述（listTitle公用，listTitleClass异处）样式...
+    -var listClass = classes
+    -var listTitleClass = classes.listTitleClass
+    -var listSubTitleClass = classes.listSubTitleClass
+    -var descClass =classes.descClass
+
+    if classes.listClass
+        -var listClass = classes.listClass
+    if classes.otherLayout == 1
+            +partFour(listData[0])
+            div.middle
+                div.icon.iconfont(class=listData[1].icon)
+                div.content= listData[1].listTitle
+            +partFour(listData[2])
+    else
+        each data in listData
+            if classes.otherLayout == 0
+                   div(class=listClass)
+                        div.main.float-l
+                            div.icon.iconfont(class=data.icon)
+                            div.listTitle(class=listTitleClass)= data.listTitle
+                        div.desc
+                            for item in data.desc
+                                li(class=descClass)
+                                    //.point
+                                    ='·'+item
+                        if classes.other
+                            div(class=classes.other)
+            else
+                div(class=listClass)
+                    div.icon.iconfont(class=data.icon)
+                    div.listTitle(class=listTitleClass)= data.listTitle
+                    if data.listSubTitle
+                        div.listSubTitle(class=listSubTitleClass)= data.listSubTitle
+                    for item in data.desc
+                        div.desc(class=descClass)= item
+                    if classes.other
+                        div(class=classes.other)
+
+
+
+
+mixin tplTitle(titleDatas)
+    -var classes = titleDatas.classes
+    -var data = titleDatas.datas
+    -var c = ['egTitle','cnTitle','info','desc']//-info有上下border的,desc是没有border的
+
+    //- titleDiv主要设置title 的 div的背景颜色（整屏）
+    div.title-div(class=classes.titleDiv!=''?classes.titleDiv:'')
+        //- titleCnt主要设置title模块的占用中间宽度
+        div.title-content(class=classes.titleCnt!=''?classes.titleCnt:'')
+            each item in c
+                if data[item]
+                    div(class=item)(class=classes[item]?classes[item]:'')= data[item]
+            //-a的钩子
+            if data.list && data.list.length > 0
+               ul.a-list
+                    each item in data.list
+                        a.list(class=classes.aList?classes.aList:'')= item
+
+//-上下布局
+mixin tplListA(listDatas)
+    -var classes = listDatas.classes
+    -var data = listDatas.datas
+    -var l = ['title','subTitle','info']
+    
+    //-(bg-image) 
+    div.a-part-in-list(class=classes.partInList!=''?classes.partInList:'')
+        if classes.icon
+            .a-icon.icon.iconfont(class=classes.icon!=''?classes.icon:'')
+        if data.iconDesc
+            .a-iconDesc(class=classes.iconDesc.style!=''?classes.iconDesc.style:'')
+                if data.iconDesc.iTitle
+                    .a-iTitle(class=classes.iconDesc.iTitle!=''?classes.iconDesc.iTitle:'')= data.iconDesc.iTitle
+                if data.iconDesc.number
+                    .a-number(class=classes.iconDesc.number!=''?classes.iconDesc.number:'')= data.iconDesc.number
+        if data.title
+            .a-title(class=classes.title!=''?classes.title:'')= data.title
+        if data.subTitle
+            .a-subTitle(class=classes.subTitle!=''?classes.subTitle:'')= data.subTitle
+        //-设置阴影
+        if classes.other
+            .a-other(class=classes.other!=''?classes.other:'')= data.other
+        if data.info
+            .a-info(class=classes.info!=''?classes.info:'')= data.info
+        if data.desc && data.desc.length >0
+            each item in data.desc
+                .a-desc-list(class=classes.desc!=''?classes.desc:'')= item
+
+
+
+//- 左右布局
+mixin tplListB(listDatas)
+    -var classes = listDatas.classes
+    -var data = listDatas.datas
+    div
+        .left
+
+            .icon
+            .iTitle
+        .middle
+            .number
+            .title
+        .right
+            .icon
+            .title
+            .subTitle
+            .info
+            .desc-list

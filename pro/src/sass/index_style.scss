@@ -2,11 +2,9 @@
 @import "public_style";
 
 
-html, body {
-    margin: 0;
-    padding: 0;
 
-    font-family: "Microsoft Yahei";
+.grey {
+    background-color: $lightGrey;
 }
 
 .top {
@@ -117,23 +115,30 @@ html, body {
 
     color: #4d4d4d;
 }
-.descOne {
+.descOne { /* 不用 */
     margin-top: 15px;
 
     font-size: 16px;
     line-height: 22px;
 
-    color: $greyLight;
+    color: $darkGrey;
 }
-.shadowOne {
+.infoOne {
+    margin-top: 15px;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    color: $darkGrey;
+}
+.shadow {
     position: absolute;
-    top:75px;
-    left:107px;
+
     z-index: -1;
 
     border-right: 5px solid red;
     border-left: 5px solid red;
-    -webkit-border-image: -webkit-linear-gradient(#F5F5F5, rgba(0, 0, 0, 0)) 16 39%;/* boder渐变效果：不知道后面那两个值是什么，但是调成这个值目前的应用效果最好 */
+    -webkit-border-image: -webkit-linear-gradient(#F5F5F5, rgba(0,0,0,0) ) 16 39%;/* boder渐变效果：不知道后面那两个值是什么，但是调成这个值目前的应用效果最好 */
     padding:0 1px;
     width:148px;
     height:100px;
@@ -146,6 +151,11 @@ html, body {
     -ms-transform: skew(-3deg) rotate(-27deg); /* Internet Explorer */
     -o-transform: skew(-3deg) rotate(-27deg); /* Opera */
     transform: skew(-3deg) rotate(-27deg);
+}
+.shadowOne {
+    @extend .shadow;
+    top:75px;
+    left:124px;//1100; 1000 - 107px;
 }
 
 
@@ -198,7 +208,10 @@ html, body {
     color: #4d4d4d;
 }
 .listSubTitle{
-    color: $greyLight;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: $darkGrey;
 }
 .descTwo {
     margin: 10px 0;
@@ -206,14 +219,22 @@ html, body {
     font-size: 16px;
     line-height: 22px;
 
-    color: $greyLight;
+    color: $darkGrey;
+}
+.infoTwo {
+    margin: 10px 0;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    color: $darkGrey;
 }
 
 .partThree {
     position: relative;
 
     margin: 0 $partThreeListMargin 27px;
-    border: 1px solid #F0F2F4;
+    border: 1px solid $lightGrey;
     padding: $partThreeListPaddingLRTB;
     width: $partThreeListWidth - 2*$partThreeListBorder - 2*$partThreeListPaddingLRTB;
     height: $partThreeListHeight - 2*$partThreeListBorder - 2*$partThreeListPaddingLRTB;
@@ -229,7 +250,7 @@ html, body {
         
         text-align: left;
 
-        color: $greyLight;
+        color: $lightGrey;
     }
 }
 .main {
@@ -241,7 +262,7 @@ html, body {
 
     margin-top: -102px;
     margin-right: -17px;
-    border: 1px solid #F0F2F4;
+    border: 1px solid $lightGrey;
     width: 0px;
     height: 106px;
 
@@ -257,11 +278,11 @@ html, body {
 
     margin-bottom: 4px;
     margin-right: 4px;
-    border: 1px solid $greyLight;
+    border: 1px solid $lightGrey;
     width: 1px;
     height: 1px;
     
-    background-color: $greyLight;
+    background-color: $lightGrey;
 }
 .descThree {
     list-style: none;
@@ -280,9 +301,13 @@ html, body {
     .icon {
         font-size: 80px;
 
-        color: $greyLight;
+        color: $darkGrey;
     }
 
+}
+.icon-desc-four {
+    font-size: 20px;
+    line-height: 30px;
 }
 .listTitleFour {
     margin: 5px 0;
@@ -311,7 +336,13 @@ html, body {
     font-size: 14px;
     line-height: 20px;
 
-    color: $greyLight;
+    color: $lightGrey;
+}
+.infoFour {
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $darkGrey;
 }
 .middle {
     float: left;
@@ -375,12 +406,12 @@ html, body {
     font-size: 14px;
     line-height: 18px;
 
-    color: $greyLight;
+    color: $lightGrey;
 }
 .footSubTitle2,.footSubTitle,.comName {
     font-size: 20px;
 
-    color: $greyLight;
+    color: $lightGrey;
 }
 .cp-r1,.cp-r2 {
     font-size: 14px;
@@ -424,3 +455,355 @@ html, body {
 
 */
 
+
+/* title */
+.title-content {
+    margin: 0 auto;
+    padding: $paddingTB70;
+    width: 1000px;
+
+    text-align: center;
+}
+.egTitle {
+    font-size: 40px;
+
+    color: $orange;
+}
+.cnTitle {
+    padding-top:14px;
+    font-size: 32px;
+
+    color: #2b2b2b;
+}
+.info { 
+    margin:20px auto 50px;
+    border-top:$subTitleBorderValue;
+    border-bottom:$subTitleBorderValue;
+    width: 721px;
+
+    font-size: 18px;
+    line-height: 30px;
+
+    color: $darkGrey;
+}
+.desc {
+    padding:20px 0;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    color: $darkGrey;
+}
+.a-list {
+    margin: 0;
+}
+.list {
+    margin:0 10px;
+    border:1px solid white;
+    border-radius: 4px;
+    padding: 2px 10px;
+
+    font-size: 16px;
+    line-height: 30px;
+
+    color: #4d4d4d;
+    background-color: white;
+
+    &:hover {
+        border-color: $orange;
+
+        color: white;
+        background-color: $orange;
+
+    }
+}
+
+.padding40 {
+    padding: $paddingTB40;
+}
+
+.paddingBottom23 {
+    padding-bottom: 23px;
+}
+
+/* 左右布局 */
+
+/* 外包平台 */
+.part-out {
+    float: left;
+
+    position: relative;
+
+    padding: 0 $partOutListPadding;
+    width: $partOutListWidth;
+    height: 297px;
+
+    background-image: url('/src/images/img7.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0px;
+
+    .icon {
+        @extend .white;
+
+            padding: 38px 0;
+        
+            font-size: 55px;
+    }
+}
+.part-out-iTitle {
+    margin-top: -35px;
+    margin-bottom: 53px;
+
+    font-size: 20px;
+
+    color: white;
+}
+.list-title-out {
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #2B2B2B;
+}
+.info-out {
+    margin-top: 18px;
+
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: $darkGrey;
+}
+.shadow-out {
+    @extend .shadow;
+    top:75px;
+    left:214px;//1100; 1000-190px;
+}
+/* 外包平台-流程摘要 */
+.part-out-procedure {
+    float: left;
+    position: relative;
+    margin: 0 auto;
+
+}
+.icon-bg-out-procedure {
+    margin-bottom: 37px;
+    border-radius: 5px;
+
+    width: $partOutProcedureListWidth;
+    height: 70px;
+
+    background-color: $orange;
+}
+.iTitle-out-procedure {
+    font-size: 22px;
+    line-height: 70px;
+
+    color: white;
+}
+.icon-number-out-procedure {
+    margin-top: -15px;
+    margin-left: ($partOutProcedureListWidth/2) - ($partOutProcedureListIconWidth+$partOutProcedureListIconBorder)/2;
+    border: $partOutProcedureListIconBorder solid $orange;
+    border-radius: 18px;
+    width: $partOutProcedureListIconWidth;
+    height: 26px;
+
+    line-height: 25px;
+
+    color: $orange;
+    background-color: white;
+}
+.desc-out-procedure {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.arrow {
+    margin-top: 20px;
+    width: $arrowWidth;
+    height: 20px;
+
+    background-image: url('/src/images/img8.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0px;
+}
+.rotate {
+    transform: rotateX(180deg);
+}
+
+.part-service {
+    float: left;
+
+    position: relative;
+
+    
+    width: 245px;
+    height: 170px;
+
+    background-color: $lightGrey;
+
+    .icon {
+        font-size: 42px;
+    }
+}
+.part-design-service {
+    @extend .part-service;
+    margin: 0 15px;
+}
+
+.hexagon-grey {
+    position: absolute;
+    top: -35px;
+    left: -16px;
+
+    padding: 23px 0;
+    width: 79px;
+    height: 95px;
+    
+    font-size: 60px;
+    text-align: center;
+
+    color: white;
+    background-image: url('/src/images/img9.png');
+    background-repeat: no-repeat;
+
+}
+.list-title-service {
+    margin-top: 26px;
+    font-size: 20px;
+
+    color: #4d4d4d;
+
+}
+.linfo-service {
+    margin: 18px;
+
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+
+    color: $darkGrey;
+}
+
+.part-team-service {
+    @extend .part-service;
+    
+    margin: 0 35px 85px;
+    text-align: center;
+}
+
+
+.part-team-cooper {
+    float: left;
+
+    width: 250px;
+    
+    color: $orange;
+    background-color: #292E31;
+
+    .icon {
+        float: left;
+
+        margin: 20px 43px;
+
+        font-size: 96px;
+    }
+}
+.part-tech-adv {
+    float: left;
+
+    margin: 0 $partTechAdvMargin;
+    width: $partTechAdvWidth;
+    height: 152px;
+
+    color: white;
+    background-image: url('/src/images/img10.png');
+    background-repeat: no-repeat;
+    background-position-x: ($partTechAdvWidth - 136px)/2;
+}
+
+.icon-number-tech-adv {
+    padding: 65px 0;
+
+    font-size: 40px;
+    line-height: 22px;
+    
+    color: #a98d76;
+}
+.list-title-tech-adv {
+    font-size: 20px;
+
+    color: #4d4d4d;
+}
+.list-sub-title-tech-adv {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+
+    color: $darkGrey;
+}
+.desc-tech{
+    font-size: 16px;
+    line-height: 24px;
+    //text-align: left;
+
+    color: #4d4d4d;
+}
+.part {
+    margin: 90px auto;
+}
+
+.part-tech-ser {
+    float: left;
+
+    width: 120px;
+
+    color:  white;
+
+    .icon {
+
+        border: 5px solid rgba(139, 217, 246,0.8);//#8BD9F6
+        border-radius: 60px;
+        width: 104px;
+        height: 104px;
+
+        font-size: 44px;
+        line-height: 73px;//
+        
+        background-color: #17B4ED;
+        background-clip: content-box;
+    }    
+}
+.iTitle-tech-ser {
+    margin:-45px 20px 28px;//margin: -52px 20px 16px;
+}
+.particular-i {
+    line-height: 66px;
+}
+.particular-ser {
+    margin: -52px 20px 16px;
+}
+.icon.darkGreen-c {
+    border-color: rgba(140, 221, 205, 0.8);//#8CDDCD;
+    background-color: #19BB9B;
+}
+.icon.red-c {
+    border-color: rgba(245, 181, 176, 0.8);//#F5B5B0;
+    background-color: #EC6C62;
+}
+.icon.green-c {
+    border-color: rgba(201, 224, 163, 0.8);//#C9E0A3;
+    background-color: #94C248;
+}
+.icon.orange-c {
+    border-color: rgba(250, 206, 163, 0.8);//#FACEA3;
+    background-color: #F69E48;
+}
+
+.line {
+    border: 3px solid rgba(211, 211, 211, 0.5);
+    margin: 56px -11px;
+    width: 85px;
+    z-index: 0;
+}

@@ -1,3 +1,10 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Microsoft Yahei";
+}
+
 .float-l {
     float: left;
 }
@@ -21,7 +28,7 @@
     color: white;
 }
 .grey {
-    background-color: #F0F2F4;
+    background-color: $lightGrey;
 }
 .black {
     background-color: #292E31;
@@ -47,3 +54,4 @@
 
     text-align: right;
 }
+

@@ -1,6 +1,7 @@
-$pageWidth: 1000px;/* 可视宽度(中间部分) */
+$pageWidth: 1100px;/* 可视宽度(中间部分) */
 
-$greyLight: #979797;
+$lightGrey: #F0F2F4;
+$darkGrey: #979797;
 $orange: #FF7800;
 
 $normalColor: grey;
@@ -15,7 +16,7 @@ $subTitleColor: #979797;
 $subTitleContentWidth: 720px;
 $subTitleBorderValue: 1px solid #D3D3D3;
 
-$partOneListWidth: 144px;
+$partOneListWidth: 210px;/* content */
 $partOneListPadding: (($pageWidth/3) - $partOneListWidth)/2;
 
 $partTwoListWidth: 230px; /* inlcuding padding */
@@ -30,6 +31,21 @@ $partThreeListMargin: (($pageWidth/4) - $partThreeListWidth)/2;
 
 $partThreeListPaddingLRTB: 20px;
 $partThreeListPaddingTop: 119px;
+
+$partOutListWidth: 372px;/* content */
+$partOutListPadding: (($pageWidth/2) - $partOutListWidth)/2;
+
+$arrowWidth: 86px;
+$partOutProcedureListWidth: 150px;
+$partOutProcedureListIconWidth: 26px;
+$partOutProcedureListIconBorder: 3px;
+
+$partTechAdvWidth: 220px;
+$partTechAdvMargin: (($pageWidth/3) - $partTechAdvWidth)/2;
+
+
+
+
 
 
 @mixin paddingV($lr,$tb) {
@@ -47,5 +63,7 @@ $partThreeListPaddingTop: 119px;
 }
 
 
+$paddingTB70: 70px 0;
+$paddingTB40: 40px 0;
 
 
