@@ -92,10 +92,10 @@ mixin tplListA(listDatas)
             .a-icon.icon.iconfont(class=classes.icon!=''?classes.icon:'')
         if data.iconDesc
             .a-iconDesc(class=classes.iconDesc.style!=''?classes.iconDesc.style:'')
-                if data.iconDesc.iTitle
-                    .a-iTitle(class=classes.iconDesc.iTitle!=''?classes.iconDesc.iTitle:'')= data.iconDesc.iTitle
                 if data.iconDesc.number
                     .a-number(class=classes.iconDesc.number!=''?classes.iconDesc.number:'')= data.iconDesc.number
+                if data.iconDesc.iTitle
+                    .a-iTitle(class=classes.iconDesc.iTitle!=''?classes.iconDesc.iTitle:'')= data.iconDesc.iTitle
         if data.title
             .a-title(class=classes.title!=''?classes.title:'')= data.title
         if data.subTitle
@@ -116,16 +116,9 @@ mixin tplListB(listDatas)
     -var classes = listDatas.classes
     -var data = listDatas.datas
     div
-        .left
-
-            .icon
-            .iTitle
-        .middle
-            .number
-            .title
+        .float-l.left
+            +tplListA(listDatas.left)
+        .float-l.center
+            +tplListA(listDatas.middle)
         .right
-            .icon
-            .title
-            .subTitle
-            .info
-            .desc-list
+            +tplListA(listDatas.right)

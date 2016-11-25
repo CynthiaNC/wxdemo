@@ -754,6 +754,12 @@
     margin: 90px auto;
 }
 
+.line {
+    border: 3px solid rgba(211, 211, 211, 0.5);
+    margin: 56px -11px;
+    width: 85px;
+    z-index: 0;
+}
 .part-tech-ser {
     float: left;
 
@@ -800,10 +806,189 @@
     border-color: rgba(250, 206, 163, 0.8);//#FACEA3;
     background-color: #F69E48;
 }
+.icon-employ {
+    width: 232px;
+    height: 251px;
 
-.line {
-    border: 3px solid rgba(211, 211, 211, 0.5);
-    margin: 56px -11px;
-    width: 85px;
-    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+.part-employ {
+    float: left;
+    margin: 0 11px;
+    width: 232px;
+    height: 400px;
+
+    color: white;
+}
+.title-employ {
+    padding: 8px 0;
+
+    font-size: 22px;
+}
+.desc-employ {
+    font-size: 16px;
+    line-height: 20px;
+}
+.icon-employ-bg-grey {
+        @extend .icon-employ;
+        background-image: url('/src/images/img15.png');
+}
+.bg-grey {
+    background: linear-gradient(90deg, #383944 120px, #33343E 57px);
+}
+.list-title-grey-border {
+    border-width: 0px;
+    border-top: 8px solid red;
+    border-image: -webkit-linear-gradient(0deg, #30313A 118px, #2D2D35 116px) 30%;
+}
+
+.icon-employ-bg-green {
+        @extend .icon-employ;
+        background-image: url('/src/images/img16.png');
+}
+.bg-green {
+    background: linear-gradient(90deg, #3C3F3A 120px, #30332F 57px);
+}
+.list-title-green-border {
+    border-width: 0px;
+    border-top: 8px solid red;
+    border-image: -webkit-linear-gradient(0deg, #212320 118px, #1A1C1A 116px) 30%;
+}
+
+.icon-employ-bg-red {
+        @extend .icon-employ;
+        background-image: url('/src/images/img17.png');
+}
+.bg-red {
+    background: linear-gradient(90deg, #8B6239 120px, #7D5833 57px);
+}
+.list-title-red-border {
+    border-width: 0px;
+    border-top: 8px solid red;
+    border-image: -webkit-linear-gradient(0deg, #603813 118px, #563211 116px) 30%;
+}
+
+.icon-employ-bg-blue {
+        @extend .icon-employ;
+        background-image: url('/src/images/img18.png');
+}
+.bg-blue {
+    background: linear-gradient(90deg, #666 120px, #4E4E4E 57px);
+}
+.list-title-blue-border {
+    border-width: 0px;
+    border-top: 8px solid red;
+    border-image: -webkit-linear-gradient(0deg, #333 118px, #1E1E1E 116px) 30%;
+}
+
+
+.part-tech-serv {
+    float: left;
+
+    margin: 15px;
+    width: 410px;
+    height: 210px;
+
+    color: white;
+    background-repeat: no-repeat;
+}
+.bg-profession {
+    background-image: url('/src/images/img19.png');
+}
+.bg-concentrate {
+    background-image: url('/src/images/img20.png');
+}
+.bg-effeciency {
+    background-image: url('/src/images/img21.png');
+}
+.bg-beaty {
+    background-image: url('/src/images/img22.png');
+}
+.list-title-tech-serv {
+    margin: 0 auto;
+    padding-top: 40px;
+
+    font-size: 30px;
+
+    color: #DDD;
+}
+.info-tech-serv {
+    margin: 30px;
+
+    font-size: 16px;
+    text-align: left;
+
+    color: #D3D3D3；
+}
+
+
+
+
+
+.part-details {
+    .icon {
+        margin: 50px 50px 0;
+
+        font-size: 80px;
+    }
+}
+.icon-details-bg {
+    margin-right: 43px;
+    border: 5px initial #Cac4c1;
+    border-radius: 100px;
+    width: 170px;
+    height: 170px;
+
+    background-color: #Eaeae9;
+
+    -webkit-box-shadow:-9px 10px 14px #9C9C9C; 
+    -moz-box-shadow:-9px 10px 14px #9C9C9C; 
+    box-shadow:-9px 10px 14px #9C9C9C;
+ 
+}
+.iTitle-details {
+    margin-top: -10px;
+
+    font-size: 25px;
+
+    color: #535454;
+}
+.icon-number-details {
+    margin-left: -23px;
+    padding-top: 15px;
+
+    font-family: cursive;
+    font-size: 70px;
+    font-weight: 700;
+    
+    color: #E05127;
+}
+.bg-orange {
+    margin-left: 195px;
+    border: 2px solid red;
+    border-radius: 100px;
+    width: 470px;
+    height: 170px;
+
+    text-align: left;
+
+    color: white;
+    background-color: #e56f2b;
+    
+    -webkit-box-shadow:-9px 10px 14px #9C9C9C; 
+    -moz-box-shadow:-9px 10px 14px #9C9C9C; 
+    box-shadow:-9px 10px 14px #9C9C9C;
+}
+.list-title-details {
+    margin-top: 30px;
+
+    font-size: 20px;
+    line-height: 30px;
+}
+.desc-details {
+    margin-top: 3px;
+
+    font-size: 16px;
+    line-height: 22px;
 }
