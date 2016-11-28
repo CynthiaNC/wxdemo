@@ -596,13 +596,15 @@
 }
 .iTitle-out-procedure {
     font-size: 22px;
-    line-height: 70px;
+    line-height: 64px;
 
     color: white;
 }
 .icon-number-out-procedure {
-    margin-top: -15px;
-    margin-left: ($partOutProcedureListWidth/2) - ($partOutProcedureListIconWidth+$partOutProcedureListIconBorder)/2;
+    position: absolute;
+    top: 70px - ($partOutProcedureListIconWidth+$partOutProcedureListIconBorder)/2;
+    left: ($partOutProcedureListWidth/2) - ($partOutProcedureListIconWidth+$partOutProcedureListIconBorder)/2;
+    
     border: $partOutProcedureListIconBorder solid $orange;
     border-radius: 18px;
     width: $partOutProcedureListIconWidth;
@@ -697,7 +699,11 @@
 .part-team-cooper {
     float: left;
 
-    width: 250px;
+     margin: 0px (52px/2);
+     width: 380px;
+     height: 205px;
+     
+     text-align: left;
     
     color: $orange;
     background-color: #292E31;
@@ -705,10 +711,30 @@
     .icon {
         float: left;
 
-        margin: 20px 43px;
+        margin: 43px 20px ;
 
         font-size: 96px;
     }
+}
+.list-title-team-cooper  {
+    padding-top: 43px;
+
+    font-size: 20px;
+    line-height: 30px;
+
+    color: white;
+}
+.list-sub-title-team-cooper {
+    margin-bottom: 20px;
+
+    line-height: 20px;
+
+    color: $darkGrey;
+}
+.info-team-cooper {
+    margin: 20px;
+
+    color: #D3D3D3;
 }
 .part-tech-adv {
     float: left;
@@ -928,9 +954,12 @@
 
 .part-details {
     .icon {
-        margin: 50px 50px 0;
+        margin: 50px 100px 40px 0px;
+        padding-bottom: 41px;
 
         font-size: 80px;
+
+        color: $darkGrey;
     }
 }
 .icon-details-bg {
@@ -986,9 +1015,6 @@
     -moz-box-shadow:-9px 10px 14px #9C9C9C; 
     box-shadow:-9px 10px 14px #9C9C9C;
 }
-.bg-orange {
-    background-color: #e56f2b;
-}
 .list-title-details {
     font-size: 20px;
     line-height: 72px;
@@ -1004,8 +1030,171 @@
     padding-top: 43px
 }
 .icon-r:before {
-    margin-left: -332px;
+    margin-left: 35px;
 }
 .word-l {/* 文字在左边的时候 */
     padding-left: 70px;
+}
+.bg-orange {
+    background-color: #e56f2b;
+}
+.bg-purple-red {
+    background-color: #b4438b;
+}
+.bg-purple-blue {
+    background-color: #57539c;
+}
+.bg-blue-green {
+    background-color: #57a6b5;
+}
+.bg-green {
+    background-color: #a7c952;
+}
+.bg-green-oragne {
+    background-color: #d89d35;
+}
+
+
+
+.margin-right-5 {
+        margin-right: 5px;
+}
+.padding-left-50 {
+        padding-left: 50px;
+}
+.margin-bottom-40 {
+    margin-bottom: 40px;
+}
+
+.part-increase {
+    float: left;
+
+    margin: 10px;
+    border: 1px solid $lightGrey;
+    padding: 10px 5px;
+    width: 240px;
+    height: 130px;
+
+    .icon {
+        margin-bottom: 10px;
+
+        font-size: 60px;
+
+        color: $orange;
+    }
+}
+.part-increase-left {
+    margin: 15px;
+
+}
+.part-increase-right {
+
+}
+.hr-increase {
+    float: left;
+
+    border: 1px solid $lightGrey;
+    height: 112px;
+}
+.iTitle-increase {
+    font-size: 20px;
+    line-height: 30px;
+
+    color: black;
+}
+.desc-increase {
+    font-size: 18px;
+    line-height: 30px;
+
+    color: $darkGrey;
+}
+
+
+.padding-e {
+    padding: (92px/2)+30px 0;
+}
+.ser-circle {
+    position: relative;
+
+    margin: 0 auto;
+    border: 1px solid $darkGrey;
+    border-radius: 280px;
+    padding: (350px-190px)/2;
+    width: 190px;
+    height: 190px;
+
+    text-align: center;
+
+    color: #FEFEFE;
+    background-color: #F4D52A;
+    background-clip: content-box;
+    .icon {
+        margin-top: 50px;
+
+        font-size: 60px;
+
+        color: #292e31;
+    }
+    .title {
+        padding-top: 5px;
+
+        font-size: 20px;
+        font-weight: bolder;
+
+        color: #292e31;
+    }
+    .top {
+        top: $circle-closed;
+        left: $circle-far;
+        
+        border-color: #3c7396;
+
+        background-color: #4fb8fa;
+    }
+    .right {
+        top: $circle-far;
+        right: $circle-closed;
+
+        border-color: #5f783d;
+
+        background-color: #94C248;
+
+    }
+    .bottom {
+        bottom: $circle-closed;
+        left: $circle-far;
+
+        border-color: #8e5350;
+
+        background-color: #f3776e;
+
+    }
+    .left {
+        top: $circle-far;
+        left: $circle-closed;
+
+        border-color: #6560bc;
+
+        background-color: #7c73f2;
+
+    }
+}
+.circle-in {
+    position: absolute;
+
+    border: 6px solid red;
+    border-radius: 80px;
+
+    width: 80px;
+    height: 80px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: white;
+    background: none;
+    background-clip: padding-box;
+}
+.content {
+    padding: 23px 5px 10px;
 }

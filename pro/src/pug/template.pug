@@ -115,10 +115,34 @@ mixin tplListA(listDatas)
 mixin tplListB(listDatas)
     -var classes = listDatas.classes
     -var data = listDatas.datas
-    div
+    div(class= listDatas.style!=''?listDatas.style:'')
         .float-l.left
             +tplListA(listDatas.left)
         .float-l.center
             +tplListA(listDatas.middle)
-        .right
+        .right(class = listDatas.right.style!=''?listDatas.right.style:'')
             +tplListA(listDatas.right)
+
+//- 首页-增值服务
+mixin tplListC(listDatas)
+    div(class= listDatas.style!=''?listDatas.style:'')
+        .float-l.left(class = listDatas.left.style!=''?listDatas.left.style:'')
+            +tplListA(listDatas.left)
+        hr(class =listDatas.hr!=''?listDatas.hr:'')
+        .right(class = listDatas.right.style!=''?listDatas.right.style:'')
+            +tplListA(listDatas.right)
+
+//- 球
+mixin tplListD
+    div.black.padding-e
+        div.ser-circle
+            .icon.iconfont.icon-logo
+            .title 全方位、多领域
+            div.circle-in.top 
+                .content 移动应用领域
+            div.circle-in.right 
+                .content 微信推广领域
+            div.circle-in.bottom 
+                .content 营销管理领域
+            div.circle-in.left 
+                .content 网站建设领域
