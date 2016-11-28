@@ -97,7 +97,7 @@
     width: $partOneListWidth;
     height: 297px;
 
-    background-image: url('/src/images/hexagon.png');
+    background-image: url('../src/images/hexagon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 0px;
@@ -193,13 +193,13 @@
 .hexagon {
     width: 97px;
 
-    background-image: url('/src/images/hexagon2.png');
+    background-image: url('../src/images/hexagon2.png');
 }
 .rectangle{
-    background-image: url('/src/images/img5.png');
+    background-image: url('../src/images/img5.png');
 }
 .circle{
-    background-image: url('/src/images/img6.png');
+    background-image: url('../src/images/img6.png');
 }
 
 .listTitleTwo {
@@ -352,7 +352,7 @@
     height: 300px;
 
     color: $orange;
-    background-image: url('/src/images/img4.png');
+    background-image: url('../src/images/img4.png');
     background-repeat: no-repeat;
     background-position: center;
 
@@ -538,7 +538,7 @@
     width: $partOutListWidth;
     height: 297px;
 
-    background-image: url('/src/images/img7.png');
+    background-image: url('../src/images/img7.png');
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 0px;
@@ -625,7 +625,7 @@
     width: $arrowWidth;
     height: 20px;
 
-    background-image: url('/src/images/img8.png');
+    background-image: url('../src/images/img8.png');
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 0px;
@@ -667,7 +667,7 @@
     text-align: center;
 
     color: white;
-    background-image: url('/src/images/img9.png');
+    background-image: url('../src/images/img9.png');
     background-repeat: no-repeat;
 
 }
@@ -744,7 +744,7 @@
     height: 152px;
 
     color: white;
-    background-image: url('/src/images/img10.png');
+    background-image: url('../src/images/img10.png');
     background-repeat: no-repeat;
     background-position-x: ($partTechAdvWidth - 136px)/2;
 }
@@ -858,7 +858,7 @@
 }
 .icon-employ-bg-grey {
         @extend .icon-employ;
-        background-image: url('/src/images/img15.png');
+        background-image: url('../src/images/img15.png');
 }
 .bg-grey {
     background: linear-gradient(90deg, #383944 120px, #33343E 57px);
@@ -871,7 +871,7 @@
 
 .icon-employ-bg-green {
         @extend .icon-employ;
-        background-image: url('/src/images/img16.png');
+        background-image: url('../src/images/img16.png');
 }
 .bg-green {
     background: linear-gradient(90deg, #3C3F3A 120px, #30332F 57px);
@@ -884,7 +884,7 @@
 
 .icon-employ-bg-red {
         @extend .icon-employ;
-        background-image: url('/src/images/img17.png');
+        background-image: url('../src/images/img17.png');
 }
 .bg-red {
     background: linear-gradient(90deg, #8B6239 120px, #7D5833 57px);
@@ -897,7 +897,7 @@
 
 .icon-employ-bg-blue {
         @extend .icon-employ;
-        background-image: url('/src/images/img18.png');
+        background-image: url('../src/images/img18.png');
 }
 .bg-blue {
     background: linear-gradient(90deg, #666 120px, #4E4E4E 57px);
@@ -920,16 +920,16 @@
     background-repeat: no-repeat;
 }
 .bg-profession {
-    background-image: url('/src/images/img19.png');
+    background-image: url('../src/images/img19.png');
 }
 .bg-concentrate {
-    background-image: url('/src/images/img20.png');
+    background-image: url('../src/images/img20.png');
 }
 .bg-effeciency {
-    background-image: url('/src/images/img21.png');
+    background-image: url('../src/images/img21.png');
 }
 .bg-beaty {
-    background-image: url('/src/images/img22.png');
+    background-image: url('../src/images/img22.png');
 }
 .list-title-tech-serv {
     margin: 0 auto;

@@ -1,0 +1,26 @@
+include public_data.pug
+include team_data.pug
+include definition.pug
+include head.pug
+body
+    include nav.pug
+    +tplTitle(title_jishutuanduifuhua)
+    div.part
+        +tplTitle(title_fuwuneirong)
+        +tplListA(list_fuwu_data1)
+        +tplListA(list_fuwu_data2)
+        +tplListA(list_fuwu_data3)
+        +tplListA(list_fuwu_data4)
+        +tplListA(list_fuwu_data5)
+        +tplListA(list_fuwu_data6)
+    div.grey
+        div.part
+            +tplTitle(title_hezuofangshi)
+            +tplListB(list_hezuo_data1)
+            +tplListB(list_hezuo_data2)
+
+    .foot
+        +footPart
+
+    script(src='bundle.js')
+    
