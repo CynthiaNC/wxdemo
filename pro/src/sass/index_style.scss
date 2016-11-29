@@ -3,9 +3,6 @@
 
 
 
-.grey {
-    background-color: $lightGrey;
-}
 
 .top {
     @include contentPage;
@@ -538,15 +535,7 @@
     }
 }
 
-.padding40 {
-    padding: $paddingTB40;
-}
-.padding-bottom-35 {
-    padding-bottom: 35px;
-}
-.paddingBottom23 {
-    padding-bottom: 23px;
-}
+
 
 /* 左右布局 */
 
@@ -1092,17 +1081,6 @@
 }
 
 
-
-.margin-right-5 {
-        margin-right: 5px;
-}
-.padding-left-50 {
-        padding-left: 50px;
-}
-.margin-bottom-40 {
-    margin-bottom: 40px;
-}
-
 .part-increase {
     float: left;
 
@@ -1236,6 +1214,26 @@
     padding: 23px 5px 10px;
 }
 
+
+
+.padding40 {
+    padding: $paddingTB40;
+}
+.padding-bottom-35 {
+    padding-bottom: 35px;
+}
+.paddingBottom23 {
+    padding-bottom: 23px;
+}
+.margin-right-5 {
+        margin-right: 5px;
+}
+.padding-left-50 {
+        padding-left: 50px;
+}
+.margin-bottom-40 {
+    margin-bottom: 40px;
+}
 .padding-bottom-0 {
     padding-bottom: 0;
 }
@@ -1251,9 +1249,11 @@
 .padding-bottom-100 {
     padding-bottom: 100px;
 }
-
 .margin-top-60 {
     margin-top: 60px;
+}
+.margin-top-m-80 {
+    margin-top: -80px;
 }
 .orange{
     color: #FF7800;
@@ -1261,6 +1261,6 @@
 .white {
     color: white;
 }
-.margin-top-m-80 {
-    margin-top: -80px;
+.grey {
+    background-color: $lightGrey;
 }
