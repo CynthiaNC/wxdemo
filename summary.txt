@@ -1,0 +1,44 @@
+ 
+1. 语义化。
+     （1）关系到列表，就用ul li ol 
+     （2）一个页面最好一个h1，接下来的标题副标题就用h2-h6嵌套下去
+     （3）记得写UTF-8编码，别偷懒
+2. banner的遮罩层。
+     （1）背景图+放内容的div背景透明，但是IE下css的rgba用不了。
+     （2）IE下遮罩可用div绝对定位opcaty属性，内容div与遮罩同级，且设定relative才可用z-index设置层次
+3. 用chrome选择鼠标的指向作为参考，指向那一块就是那一块，层级关系尽量明确
+4. body文档高度小于屏幕高度，footer块的“粘底”处理
+5. 规范
+     （1）命名规范与参考
+     （2）sass设计模式[base,layout,modle,theme,state] - 分文件
+     （3）pug文件分放，主页面，用一个文件夹专门放，块页面,命名_x，加主页面的字母
+6. padding 与 margin 用法
+     padding用在元素与内容之间，限制内容起始
+     margin用在元素与元素之间，有折叠效应
+7. tip：
+     （1）抽取函数，算width or padding margin
+     （2）尽量不定义height，让css自由撑开高度
+     （3）text-align:center可继承耶
+8. 新知识点：
+    （1）css/sass使用
+        a .background-clip：定义背景涵盖部分,有content-box,padding-box,border-box
+        b .chrome鼠标选择指向的div有显示宽高，但是该数值包含padding的值
+        c .width和height的值都只是表示content部分
+        d .设置background图片,要设置bg-repeat,bg-position等属性
+        e .transition的skew设置平行四边形的两边之间的角度，rotate是图形旋转
+        f .hr水平线垂直 border: 1px solid $lightGrey;  height: 112px;
+        g .linear-gradient设置渐变
+             - border线性渐变： -webkit-border-image: -webkit-linear-gradient(#F5F5F5, rgba(0,0,0,0) ) 16 39%;/*  boder渐变效果：不知道后面那两个值是什么，但是调成这个值目前的应用效果最好 */ 
+             - border对半色调：border-image: -webkit-linear-gradient(0deg, #212320 118px, #1A1C1A 116px) 30 %;
+             - bg对半色调：background: linear-gradient(90deg, #8B6239 120px, #7D5833 57px);
+        h .清除浮动
+            - 列表元素：clear:both 占住一个空位，继续排队
+            - 父元素:after  内全部子元素浮动，清除浮动 display: block; clear: both; content: '';
+        j. transform写法，先写全部带前缀的transform，最后写transform
+        i. CSS六边形,全填充，现成代码
+    （2）jade使用
+        a. !{} 不转义字符串,注意是字符串
+        b. +xxx xxx是mixin的定义，可带参数（掌握熟悉）
+        c. ：before 与:after是两个div
+        d. if(classes.xx) xx若无或''不会，不会进去，也可条件div(class=item)(class=classes[item]?classes[item]:'')= data[item]
+        e. class确定时，如active，就可以这样简写class={active:index==1}
