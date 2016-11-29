@@ -33,9 +33,7 @@ html, body {
 .black {
     background-color: #292E31;
 }
-.orange{
-    color: #FF7800;
-}
+
 
 .all-left {
     float: left;
@@ -59,4 +57,9 @@ html, body {
     clear: both;
 
     margin-left: 150px;
+}
+.be-center {
+    display: table;
+    
+    margin: 0 auto;
 }

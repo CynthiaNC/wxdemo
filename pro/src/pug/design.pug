@@ -1,0 +1,20 @@
+include design_data.pug
+include head.pug
+body
+    include nav.pug
+    +tplTitle(title_chanpingsheji)
+    div.part
+        +tplTitle(title_fuwuneirong)
+        .be-center
+            +tplListA(list_service_data1)
+            +tplListA(list_service_data2)
+            +tplListA(list_service_data3)
+            +tplListA(list_service_data4)
+
+    include detail.pug
+
+    .foot
+        +footPart
+
+    script(src='bundle.js')
+    

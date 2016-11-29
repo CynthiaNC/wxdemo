@@ -1,23 +1,24 @@
-include public_data.pug
 include team_data.pug
-include definition.pug
 include head.pug
 body
     include nav.pug
     +tplTitle(title_jishutuanduifuhua)
-    div.part
+    div.part.padding-bottom-0
         +tplTitle(title_fuwuneirong)
-        +tplListA(list_fuwu_data1)
-        +tplListA(list_fuwu_data2)
-        +tplListA(list_fuwu_data3)
-        +tplListA(list_fuwu_data4)
-        +tplListA(list_fuwu_data5)
-        +tplListA(list_fuwu_data6)
+        .be-center(style="margin: 10px 77px;")
+            +tplListA(list_fuwu_data1)
+            +tplListA(list_fuwu_data2)
+            +tplListA(list_fuwu_data3)
+            +tplListA(list_fuwu_data4)
+            +tplListA(list_fuwu_data5)
+            +tplListA(list_fuwu_data6)
     div.grey
         div.part
             +tplTitle(title_hezuofangshi)
-            +tplListB(list_hezuo_data1)
-            +tplListB(list_hezuo_data2)
+            .be-center
+                +tplListB(list_hezuo_data1)
+                +tplListB(list_hezuo_data2)
+            .bt.bt-other  立即合作
 
     .foot
         +footPart

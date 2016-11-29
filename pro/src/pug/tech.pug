@@ -1,0 +1,113 @@
+include tech_data.pug
+include head.pug
+body
+    include nav.pug
+    +tplTitle(title_jishuyanfa)
+
+    div.part
+        +tplTitle(title_fuwujianjie)
+        .be-center.margin-110
+            +tplListA(list_ser_data1)
+            +tplListA(list_ser_data2)
+            +tplListA(list_ser_data3)
+            +tplListA(list_ser_data4)
+
+    
+    div.part
+        +tplTitle(title_android)
+        +tplTitle(subTitle_android)
+        +tplListA(list_android_adv_data1)
+        +tplListA(list_android_adv_data2)
+        +tplListA(list_android_adv_data3)
+        .be-center
+            +tplTitle(subTitle_service)
+            +tplListA(list_android_ser_data1)
+            +tplListA(line)
+            +tplListA(list_android_ser_data2)
+            +tplListA(line)
+            +tplListA(list_android_ser_data3)
+            +tplListA(line)
+            +tplListA(list_android_ser_data4)
+            +tplListA(line)
+            +tplListA(list_android_ser_data5)
+    
+    div.part
+        +tplTitle(title_ios)
+        +tplTitle(subTitle_ios)
+        +tplListA(list_iso_adv_data1)
+        +tplListA(list_iso_adv_data2)
+        +tplListA(list_iso_adv_data3)
+        .be-center
+            +tplTitle(subTitle_service)
+            +tplListA(list_iso_ser_data1)
+            +tplListA(line)
+            +tplListA(list_iso_ser_data2)
+            +tplListA(line)
+            +tplListA(list_iso_ser_data3)
+            +tplListA(line)
+            +tplListA(list_iso_ser_data4)
+            +tplListA(line)
+            +tplListA(list_iso_ser_data5)
+
+    div.part
+        +tplTitle(title_html5)
+        +tplTitle(subTitle_html5)
+        +tplListA(list_h5_adv_data1)
+        +tplListA(list_h5_adv_data2)
+        +tplListA(list_h5_adv_data3)
+        .be-center
+            +tplTitle(subTitle_service)
+            +tplListA(list_h5_ser_data1)
+            +tplListA(line)
+            +tplListA(list_h5_ser_data2)
+            +tplListA(line)
+            +tplListA(list_h5_ser_data3)
+            +tplListA(line)
+            +tplListA(list_h5_ser_data4)
+            +tplListA(line)
+            +tplListA(list_h5_ser_data5)
+
+    div.part
+        +tplTitle(title_wechat)
+        +tplTitle(subTitle_wechat)
+        +tplListA(list_wechat_adv_data1)
+        +tplListA(list_wechat_adv_data2)
+        +tplListA(list_wechat_adv_data3)
+        .be-center
+            +tplTitle(subTitle_service)
+            +tplListA(list_wechat_ser_data1)
+            +tplListA(line)
+            +tplListA(list_wechat_ser_data2)
+            +tplListA(line)
+            +tplListA(list_wechat_ser_data3)
+            +tplListA(line)
+            +tplListA(list_wechat_ser_data4)
+            +tplListA(line)
+            +tplListA(list_wechat_ser_data5)
+
+
+    div.part
+        +tplTitle(title_wechatPro)
+        +tplTitle(subTitle_wechatPro)
+        +tplListA(list_wechatPro_adv_data1)
+        +tplListA(list_wechatPro_adv_data2)
+        +tplListA(list_wechatPro_adv_data3)
+        .be-center
+            +tplTitle(subTitle_service)
+            +tplListA(list_wechatPro_ser_data1)
+            +tplListA(line)
+            +tplListA(list_wechatPro_ser_data2)
+            +tplListA(line)
+            +tplListA(list_wechatPro_ser_data3)
+            +tplListA(line)
+            +tplListA(list_wechatPro_ser_data4)
+            +tplListA(line)
+            +tplListA(list_wechatPro_ser_data5)
+    
+    include detail.pug
+
+    .foot
+        +footPart
+
+    script(src='bundle.js')
+    

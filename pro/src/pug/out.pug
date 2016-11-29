@@ -1,0 +1,46 @@
+include out_data.pug
+include head.pug
+body
+    include nav.pug
+    +banner("广州专业的移动互联网一站式解决方案提供商")
+    div.part.margin-top-m-80
+        +tplListA(list_banner_data1)
+        +tplListA(list_banner_data2)
+
+    //- 球
+    div.black.padding-bottom-100
+        div.part
+            +tplTitle(title_fuwulingyu)
+        div.ser-circle
+            .icon.iconfont.icon-logo
+            .title 全方位、多领域
+            div.circle-in.top 
+                .content 移动应用领域
+            div.circle-in.right 
+                .content 微信推广领域
+            div.circle-in.bottom 
+                .content 营销管理领域
+            div.circle-in.left 
+                .content 网站建设领域
+
+    div.part
+        +tplTitle(title_liuchengzhaiyao)
+        div.be-center
+            +tplListA(list_flow_data1)
+            +tplListA(arrow)
+            +tplListA(list_flow_data2)
+            +tplListA(arrowR)
+            +tplListA(list_flow_data3)
+            +tplListA(arrow)
+            +tplListA(list_flow_data4)
+            +tplListA(arrowR)
+            +tplListA(list_flow_data5)
+        
+    include detail.pug
+    
+    .foot
+        +footPart
+
+    script(src='bundle.js')
+
+

@@ -1,0 +1,20 @@
+include employ_data.pug
+include head.pug
+body
+    include nav.pug
+    +tplTitle(title_qiuxianruoke)
+    .part.margin-top-60
+        .be-center
+            +tplListA(list_employ_data1)
+            +tplListA(list_employ_data2)
+            +tplListA(list_employ_data3)
+            +tplListA(list_employ_data4)
+        .bt.bt-other 联系我们
+        p (简历投递至 !{"<a class='orange'>HR@talkmoney.cn</a>"})
+
+    .foot
+        +footPart
+
+    script(src='bundle.js')
+
+

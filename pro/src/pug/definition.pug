@@ -4,14 +4,6 @@ mixin styleLink(path)
     link(type="text/css" rel="stylesheet" href= path)
 
 
-//分为四个部分
-mixin part(title,subtitle,className)
-    div.part(class=className)
-        .title= title
-        .subtitle= subtitle
-        if block
-            block
-
 
 mixin navList(className,list)
     ul.nav
@@ -19,17 +11,12 @@ mixin navList(className,list)
             li(class=className)=  item
                 hr.hr-in-nav(class={other:index ==0})
 
-
-mixin subPart(index)
-    case index
-        when 'one'
-            +partList(partOneCLasses,partOneDatas)
-        when 'two'
-            +partList(partTwoCLasses,partTwoDatas)
-        when 'three'
-            +partList(partThreeCLasses,partThreeDatas)
-        when 'four'
-            +partList(partFourCLasses,partFourDatas)
+mixin banner(subtitle)
+    .banner
+        .black-mask
+            .part
+                .banner-title.orange 芦苇科技
+                .banner-subtitle= "——"+subtitle
 
 
 mixin footPart
