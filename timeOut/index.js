@@ -1,12 +1,13 @@
 var CANVAS_WIDTH=1200;
-var CANVAS_HEIGHT=500;
+var CANVAS_HEIGHT=400;
 var MARGIN_TOP=50;
 var MARGIN_LEFT=50;
 var RADIUS = 5;
 var DATE_RADIUS=1;
-var endDate = new Date(2016,11,1,11,19,10);
+var endDate = new Date(2016,11,1,12,19,10);
 var showDate='';
 var currentShow = 0;
+var colors_s = '0123456789ABCDEF';
 var colors=['rgba(249, 134, 149, 0.8)','rgba(247, 145, 234, 0.8)','rgba(214, 126, 246, 0.8)','rgba(36, 240, 70, 0.8)','rgba(102, 244, 240, 0.8)','rgba(227, 193, 251, 0.8)'];
 //var colors=['rgb(249, 134, 149)','rgb(247, 145, 234)','rgb(214, 126, 246)','rgb(36, 240, 70)','rgb(102, 244, 240)','rgb(227, 193, 251)'];
 
@@ -95,13 +96,17 @@ function addBall(x,y,num,cxt){
     for (var i = 0; i < digit[num].length ; i++) {
         for (var j=0;j<digit[num][i].length;j++) {
             if(digit[num][i][j] == 1){
+                var ballColor;//原本产生颜色，但是有这个就不用啦(~~(Math.random()*(1<<24))).toString(16)
+                for (var c = 0,ballColor='#';c < 6; c++) {
+                            ballColor +=colors_s[Math.floor(Math.random()*colors_s.length)];
+               }
                 var ball = {
                     x:x+(RADIUS+1)*j*2,
                     y:y+ (RADIUS+1)*i*2,
                     vx:Math.pow(-1,Math.ceil(Math.random()*1000))*4,
                     vy:-5,
                     g:1.5+Math.random(),
-                    color:colors[Math.floor(Math.random()*colors.length)]
+                    color:'#'+(~~(Math.random()*(1<<24))).toString(16)//colors[Math.floor(Math.random()*colors.length)]
                 }
                 balls.push(ball);
 
@@ -115,43 +120,12 @@ function addBall(x,y,num,cxt){
     }
 }
 function getTime(){
-    var date = getDate()
-    if(date.isFutureTime){
-            var current = new Date();
-            var end = date.isToday ? endDate : new Date(current.getFullYear(),current.getMonth(),current.getDate(),23,59,59)
-            var ret = end.getTime() - current.getTime();
-            ret = Math.round(ret/1000);
-
-            return ret >= 0 ? ret : 0;
-    }else
-            return 0;
-
+        var current = new Date();
+        var ret = endDate.getTime() - current.getTime();
+        ret = Math.round(ret/1000);
+        return ret >= 0 ? ret : 0;
 }
 
-function getDate(){
-    // if((endDate instanceof Date) == false)
-    //     return{
-    //         isFutureTime:false
-    //     }
-    var now = new Date();
-    var ret = endDate.getTime() - now.getTime();
-
-    var yearRet = endDate.getFullYear() - now.getFullYear();
-    var monthRet = endDate.getMonth() - now.getMonth();
-    var dateRet = endDate.getDate() - now.getDate();
-
-    var m = endDate.getMonth()+1 >>0;
-    var d=endDate.getDate();
-    var year =  endDate.getFullYear()
-    var month = m> 9 ? m: '0' + m;
-    var date = d> 9 ? d: '0' + d;
-    showDate =year+ '/' + month+ '/'+ date;
-    return {
-        isFutureTime: ret>0,//yearRet >= 0 && monthRet >= 0 && dateRet>= 0,
-        isToday:ret<86400000,
-        dateRet:dateRet
-    }
-}
 
 
 function render(ms,cxt){
