@@ -4,15 +4,15 @@ var MARGIN_TOP=50;
 var MARGIN_LEFT=50;
 var RADIUS = 5;
 var CIRCLE_DIV = RADIUS + 1;//包含源点的正方形 1.3作为间隙
-var endDate = new Date(2016,11,3,12,19,10);//这个不要了，要秒数
  var numOrder = ['hour/10','hour%10',':','minutes/10','minutes%10',':','seconds/10','seconds%10'];
-var m={}; //记录每个数字的margin-left
+var m={}; //记录每个数字的margin-left,按上面的顺序查找
 var currentShow = 0;
 var balls = [];
-var secondsTime = 3;
+var secondsTime = 10;
 
 
 window.onload = function () {
+    var = cutdownClock()
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');  //画布上下文 2d画布
 
@@ -112,10 +112,6 @@ function addBall(x,y,num,cxt){
     }
 }
 function getTime(){
-        // var current = new Date();
-        // var ret = endDate.getTime() - current.getTime();
-        // ret = Math.round(ret/1000);
-        // return ret >= 0 ? ret : 0;
         return secondsTime >= 0 ? secondsTime : 0;
 }
 

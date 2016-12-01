@@ -1,4 +1,4 @@
-var digit =
+export var digit =
     [
         [
             [0,0,1,1,1,0,0],
