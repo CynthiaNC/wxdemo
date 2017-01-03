@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/books/book",
     "pages/index/index",
     "pages/home/home",
     "pages/logs/logs",
@@ -22,8 +23,8 @@
       "pagePath": "pages/index/index",
       "text": "首页"
     }, {
-      "pagePath": "pages/logs/logs",
-      "text": "日志"
+      "pagePath": "pages/books/book",
+      "text": "图书"
     }, {
       "pagePath": "pages/home/home",
       "text": "我"

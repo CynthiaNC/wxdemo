@@ -5,7 +5,7 @@
   <scroll-view id="recommend-feed" scroll-y="true"  bindscrolltolower="pullUpLoad">
 
       <view wx:for="{{data}}" wx:key="{{item}}" class="feed-item">
-        <navigator url="../details/details">
+        <navigator url="../details/details?title={{item.column.id}}">
           <view class="author">
             <image class="avatar" mode="scaleToFill" src="{{item.author.avatar}}"></image>
             <text class="name">{{item.author.name}}</text>

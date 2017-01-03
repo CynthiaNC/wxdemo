@@ -1,0 +1,27 @@
+/* pages/books/book.wxss */
+
+.list {
+    white-space: nowrap;
+    margin-bottom:30px;
+}
+
+.list-item {
+    display: inline-block;
+} 
+.list-item  image{
+    width: 100px; 
+    height: 142px; 
+    padding:5px;
+        
+}
+.list-item  .title{
+    font-size: 14px;
+    text-align: center;
+    color: #aaa;
+        
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}

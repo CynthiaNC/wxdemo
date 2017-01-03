@@ -1,2 +1,6 @@
 <!--pages/details/details.wxml-->
-<text>pages/details/details.wxml</text>
+<view>
+    <text>{{data.title}}</text>
+    <text>{{data.summary}}</text>
+</view>
+
