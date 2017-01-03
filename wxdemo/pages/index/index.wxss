@@ -1,0 +1,113 @@
+/**index.wxss**/
+.pull-up-tip {
+    height: 110rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#aaa;
+}
+
+.avatar {
+  position: relative; 
+}
+#recommend-feed {
+    font-size: 12px;
+    height: 1130rpx;
+}
+
+#recommend-feed .feed-item {
+    display: block;
+    padding: 15px 18px 18px;
+    position: relative;
+    color: #494949;
+    border-bottom:1px solid #f2f2f2;
+}
+.feed-item .title {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.feed-item .desc {
+    color: #aaa;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+#recommend-feed .feed-item .author {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+#recommend-feed .feed-item .author .avatar {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    border-radius: 100%;
+    margin-right: 6px;
+}
+
+#recommend-feed .feed-item .feed-label {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border-radius: 3px;
+    padding: 3px 10px;
+    color: #aaa;
+}
+
+#recommend-feed .feed-item .feed-label:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+}
+
+#recommend-feed .feed-content {
+    overflow: hidden;
+}
+
+#recommend-feed .feed-content .cover {
+    position: relative; 
+    width: 30%; /*23.6%;*/
+    height:100px;
+    margin-left: 25px;
+    float: right;
+    margin-top: 10px;
+}
+#recommend-feed .feed-content h3 {
+    text-align: justify;
+    font-size: 18px;
+    padding-right: 36px;
+    color: #494949;
+}
+#recommend-feed .feed-content p {
+    overflow: hidden;
+    text-align: justify;
+    color: #aaa;
+    font-size: 13px;
+    max-width: calc(100% - 36px);
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+

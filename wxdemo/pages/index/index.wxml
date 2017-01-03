@@ -1,0 +1,27 @@
+
+<!--index.wxml-->
+<view class="container">
+
+  <scroll-view id="recommend-feed" scroll-y="true"  bindscrolltolower="pullUpLoad">
+
+      <view wx:for="{{data}}" wx:key="{{item}}" class="feed-item">
+        <navigator url="../details/details">
+          <view class="author">
+            <image class="avatar" mode="scaleToFill" src="{{item.author.avatar}}"></image>
+            <text class="name">{{item.author.name}}</text>
+          </view>
+          <text class="feed-label">{{item.column.name}}{{item.column.id}}</text>
+          <view class="feed-content">
+            <image class="cover" mode="aspectFill" src="{{item.cover_url}}"></image>
+            <text class="title">{{item.title}}</text>
+            <text class="desc">{{item.desc}}</text>
+          </view>
+          <view class="feed-info"></view>
+        </navigator>
+      </view>
+      <view class="pull-up-tip">
+        <text>加载中...</text>
+      </view>
+      
+  </scroll-view>
+</view>
