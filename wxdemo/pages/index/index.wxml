@@ -5,12 +5,12 @@
   <scroll-view id="recommend-feed" scroll-y="true"  bindscrolltolower="pullUpLoad">
 
       <view wx:for="{{data}}" wx:key="{{item}}" class="feed-item">
-        <navigator url="../details/details?title={{item.column.id}}">
+        <navigator url="../details/details?title={{item.column.id}}&&type={{item.column.name}}">
           <view class="author">
             <image class="avatar" mode="scaleToFill" src="{{item.author.avatar}}"></image>
             <text class="name">{{item.author.name}}</text>
           </view>
-          <text class="feed-label">{{item.column.name}}{{item.column.id}}</text>
+          <text class="feed-label">{{item.column.name}}</text>
           <view class="feed-content">
             <image class="cover" mode="aspectFill" src="{{item.cover_url}}"></image>
             <text class="title">{{item.title}}</text>

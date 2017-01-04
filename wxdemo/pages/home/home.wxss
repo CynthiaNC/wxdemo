@@ -1,1 +1,41 @@
 /* pages/home/home.wxss */
+input,slider,switch,button {
+    width: 50%;
+}
+.flex-box {
+    display: flex;
+    align-items: center;
+}
+
+.home {
+    margin: 20px;
+    font-size: 18px;
+}
+.section__title {
+    margin:10px 20px;
+}
+text {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-family: monospace;
+    margin: 10px auto;
+    color:dimgrey;
+}
+input {
+    border-radius: 5px;
+    padding:2px 15px;
+}
+slider {
+    width:80%;
+    margin:15px auto 30px;
+}
+label {
+    color: slategray;
+}
+view {
+    margin:10px;
+}
+radio {
+    margin:0 10px;
+}

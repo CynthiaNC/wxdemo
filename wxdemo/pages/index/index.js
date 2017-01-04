@@ -31,18 +31,20 @@ Page({
 
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
-      getData({
+      that.setData({
+          userInfo:userInfo
+        })
+
+    })
+    getData({
         url:url,
         parms:parms,
         success:function(data){                    
           that.setData({
-            userInfo:userInfo,
             data:data.recommend_feeds
           })
         }
       })
-
-    })
 
   },
   pullUpLoad:function () {

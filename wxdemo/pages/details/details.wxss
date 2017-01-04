@@ -1,1 +1,62 @@
 /* pages/details/details.wxss */
+@import '../index/index.wxss';
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}
+.details {
+    margin-top:5rpx;
+}
+.title {
+    color: #8bc34a;
+    text-align: center;
+    display:block;
+    margin: 20px auto;
+}
+.desc {
+    font-size: 14px;
+    line-height: 25px;
+    margin: 20px;
+}
+
+.img {
+    margin:0 auto;
+    display:block;
+}
+.tags-list {
+    margin: 0 20px;
+}
+.tag {
+    display:inline-block;
+    float:left;
+    background-color:#f2f2f2;
+    color:#8bc34a;
+    padding:4px 7px;
+    margin:5px;
+    font-size:13px;
+    height:17px;
+    line-height:6px;
+    border-radius:13px;
+}
+
+.pay {
+    clear: both; 
+    font-size: 15px;
+    margin: 20px auto;
+    display: block;
+}
+.pay text {
+    margin-top: 20px;
+    text-align: center;
+    color:darkgrey;
+}
+.pay text.red {
+    color: red;
+}
+
+.to-pay {
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

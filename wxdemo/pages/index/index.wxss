@@ -29,7 +29,7 @@
     margin-bottom: 10px;
 
 }
-.feed-item .desc {
+.desc {
     color: #aaa;
     display: -webkit-box;
     overflow: hidden;

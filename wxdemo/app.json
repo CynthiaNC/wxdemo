@@ -1,14 +1,14 @@
 {
   "pages":[
-    "pages/books/book",
-    "pages/index/index",
     "pages/home/home",
+    "pages/books/book",
+    "pages/index/index",    
     "pages/logs/logs",
     "pages/details/details"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#aaa",
+    "navigationBarBackgroundColor": "#8bc34a",
     "navigationBarTitleText": "Demo",
     "navigationBarTextStyle":"#fff"
   },
@@ -16,8 +16,8 @@
   "tabBar": {
     "position":"top",
     "borderStyle":"white",
-    "backgroundColor":"#25e0ae",
-    "selectedColor":"red",
+    "backgroundColor":"#ffc0cb",
+    "selectedColor":"#2196f3",
     "color":"white",
     "list": [{
       "pagePath": "pages/index/index",

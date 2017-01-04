@@ -1,5 +1,11 @@
 /* pages/books/book.wxss */
-
+.part {
+    margin-top:10px;
+}
+text {
+  color:#2196f3;
+  font-size:18px;
+}
 .list {
     white-space: nowrap;
     margin-bottom:30px;

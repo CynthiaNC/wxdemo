@@ -1,4 +1,5 @@
 /**app.wxss**/
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,3 +8,8 @@
   
   box-sizing: border-box;
 } 
+
+input {
+  background-color: #f2f2f2;
+  color:#ffc0cb;
+}
