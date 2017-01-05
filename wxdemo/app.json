@@ -1,16 +1,19 @@
 {
   "pages":[
+    "pages/service/service",
+    "pages/index/index",    
     "pages/home/home",
     "pages/books/book",
-    "pages/index/index",    
     "pages/logs/logs",
-    "pages/details/details"
+    "pages/details/details",    
+    "pages/service/record"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#8bc34a",
     "navigationBarTitleText": "Demo",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh":"true"
   },
   "debug": true,
   "tabBar": {
@@ -25,6 +28,9 @@
     }, {
       "pagePath": "pages/books/book",
       "text": "图书"
+    }, {
+      "pagePath": "pages/service/service",
+      "text": "服务"
     }, {
       "pagePath": "pages/home/home",
       "text": "我"

@@ -2,8 +2,15 @@
 import {getData} from '../../app.js'
 var url='https://frodo.douban.com/jsonp/subject_collection/book_fiction/items?os=ios&callback=jsonp1&start=0&count=8&loc_id=0&_=1483446916795'
 
+var  swiperImage = [
+'https://img1.doubanio.com/view/photo/photo/public/p2267258937.jpg',
+'https://img1.doubanio.com/view/photo/photo/public/p2267258609.jpg','https://img3.doubanio.com/view/photo/photo/public/p2267258431.jpg','https://img5.doubanio.com/view/photo/photo/public/p2267257086.jpg',
+]
+
 Page({
-  data:{},
+  data:{
+    swiperImage:swiperImage,
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
@@ -33,5 +40,12 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+   onShareAppMessage: function () {
+    return {
+      title: '图书',
+      desc: '最热书单',
+      path: '/pages/books/book'
+    }
   }
 })

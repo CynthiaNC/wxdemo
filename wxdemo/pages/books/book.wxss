@@ -31,3 +31,12 @@ text {
     display: flex;
     flex-direction: column;
 }
+.slide-image {
+    width:100%;
+}
+swiper {
+display:block;
+height:300px;
+margin-bottom:20px;
+
+}

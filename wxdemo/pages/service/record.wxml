@@ -1,0 +1,10 @@
+<!--/pages/service/record.wxml-->
+<view>
+     <!--<loading hidden="{{!loadding}}"></loading>-->
+     <icon type="circle" hidden="{{!loadding}}" size="80"/>
+     <view class="button-group">
+        <button class="record" type="primary" bindtap="recordAction">{{showType}}</button>
+        <button class="play" type="primary" bindtap="audioPlay" disabled="{{notAllowedPlay}}">{{playType}}</button>
+    </view>
+
+</view>

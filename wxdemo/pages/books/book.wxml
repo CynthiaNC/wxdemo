@@ -36,18 +36,6 @@
             </view>
         </scroll-view>
     </view>
-    <view class="part" type="hot">
-        <text>最热书籍</text>
-        <scroll-view class="list" scroll-x="true">
-            <view wx:for="{{data}}" wx:key="{{item}}" class="list-item">
-            <navigator url="../details/details?title={{item.id}}&&type=图书" class="flex-box">
-                <image mode="aspectFill" src="{{item.cover.url}}"></image>
-                <text class="title">{{item.title}}</text>
-            </navigator>
-                
-            </view>
-        </scroll-view>
-    </view>
     
 
 </view>

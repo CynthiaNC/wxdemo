@@ -1,7 +1,11 @@
 <!--pages/home/home.wxml-->
 <view class="home" >
-    <text>修改资料</text>
+    <loading hidden="{{hidden}}"></loading>
+    <text class="">我的信息</text>
     <form bindsubmit="formSubmit">
+        <view class="section section_img">
+            <image bindtap="bindImg"  mode="aspectFill" src="{{img}}"></image>
+        </view>
         <view class="section section_name flex-box ">
             <label class="section__title" for="nickName">昵称</label>
             <input id="nickName" type="text" name="nickName" value="Name" placeholder="Name Please"/>
@@ -13,10 +17,14 @@
                 <radio value="2" color="#ffc0cb">女</radio>
             </radio-group>
         </view>
-
+        <view class="section section_position flex-box" >
+            <label class="section__title" for="positionswitch">位置</label>
+            <switch name="positionswitch" bindchange="positionSwitchChange" checked="{{position}}" color="#ffc0cb"/>
+            <text  class="position" style="{{!position?'display:none;':''}}" bindtap="positionChange">{{positionData}}</text>
+        </view>
         <view class="section section_gap  flex-box " >
             <label class="section__title">邮件订阅</label>
-            <switch name="switch" bindchange="switchChange" checked color="#ffc0cb"/>
+            <switch name="mailswitch" bindchange="mailSwitchChange" checked color="#ffc0cb"/>
         </view>
         <view class="section section_gap" style="{{!mail?'display:none;':''}}">
             <label class="section__title" >订阅频率:每周最多{{mailNum}}封订阅推荐</label>

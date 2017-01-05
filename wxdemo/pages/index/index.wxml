@@ -2,7 +2,15 @@
 <!--index.wxml-->
 <view class="container">
 
-  <scroll-view id="recommend-feed" scroll-y="true"  bindscrolltolower="pullUpLoad">
+  <scroll-view id="recommend-feed" scroll-y="true"  bindscrolltolower="pullUpLoad" scroll-top="{{scrollTop}}">
+
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+        <block wx:for="{{swiperImage}}" wx:key="{{item}}">
+            <swiper-item>
+                <image src="{{item}}" mode="aspectFill" class="slide-image"></image>
+            </swiper-item>
+        </block>
+    </swiper>
 
       <view wx:for="{{data}}" wx:key="{{item}}" class="feed-item">
         <navigator url="../details/details?title={{item.column.id}}&&type={{item.column.name}}">
@@ -22,6 +30,7 @@
       <view class="pull-up-tip">
         <text>加载中...</text>
       </view>
+      <view class="top" bindtap="top">Top</view>
       
   </scroll-view>
 </view>

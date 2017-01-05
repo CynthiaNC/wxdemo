@@ -1,0 +1,6 @@
+<!--pages/service/service.wxml-->
+<view class="service">
+    <view wx:for="{{service}}" wx:key="{{item}}">
+        <button type="default" bindtap="{{item.event}}">{{item.name}}</button>
+    </view>
+</view>

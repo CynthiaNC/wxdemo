@@ -3,6 +3,11 @@ import {getData} from '../../app.js'
 //获取应用实例
 var app = getApp()
 var url = 'https://m.douban.com/rexxar/api/v2/recommend_feed?';//alt=json&next_date=&loc_id=108288&gender=&birthday=&udid=9fcefbf2acf1dfc991054ac40ca5114be7cd092f&for_mobile=true
+var  swiperImage = [
+'../../image/20170105090109.png',
+'https://img1.doubanio.com/view/photo/photo/public/p2267258937.jpg',
+'https://img1.doubanio.com/view/photo/photo/public/p2267258609.jpg','https://img3.doubanio.com/view/photo/photo/public/p2267258431.jpg','https://img5.doubanio.com/view/photo/photo/public/p2267257086.jpg',
+]
 
 var parms =  {
     alt:'json',
@@ -11,13 +16,15 @@ var parms =  {
     gender:'',
     birthday:'',
     udid:'9fcefbf2acf1dfc991054ac40ca5114be7cd092f',
-    for_mobile:true
+    for_mobile:true,
+    scrollTop:0
 }
 
 Page({
   data: {
     userInfo: {},
     data: {},
+    swiperImage:swiperImage,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -46,6 +53,7 @@ Page({
         }
       })
 
+
   },
   pullUpLoad:function () {
     console.log('hi')
@@ -61,6 +69,14 @@ Page({
           })
         }
       })
+  },
+  onPullDownRefresh: function(){
+    wx.stopPullDownRefresh()
+  },
+  top:function(){
+    this.setData({
+      scrollTop:0
+    })
   }
   
 })
