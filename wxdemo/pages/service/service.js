@@ -6,6 +6,7 @@ Page({
       {name:'扫码',event:'bindScan'},
       {name:'录音',event:'bindRecord'},
       {name:'查看当前网络类型',event:'bindGetNetWorkType'},
+      {name:'图表',event:'bindChart'},
     ]
   },
   onLoad:function(options){
@@ -59,6 +60,20 @@ Page({
           content: '当前网络类型是是：' + networkType,
           showCancel:false
         })
+      }
+    })
+  },
+  bindChart:function(){
+    wx.navigateTo({
+      url: '/pages/service/chart',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
       }
     })
   }

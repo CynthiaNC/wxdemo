@@ -1,0 +1,8 @@
+<!--pages/service/chart.wxml-->
+
+<canvas canvas-id='pieCanvas' />
+<canvas canvas-id='ringCanvas'/>
+<canvas canvas-id='lineCanvas'/>
+<canvas canvas-id='columnCanvas'/>
+<canvas canvas-id='areaCanvas'/>
+

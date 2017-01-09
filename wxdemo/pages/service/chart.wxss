@@ -1,0 +1,5 @@
+/* pages/service/chart.wxss */
+canvas {
+    width: 750rpx;
+    height: 750rpx;
+}

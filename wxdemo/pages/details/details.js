@@ -1,7 +1,13 @@
 // pages/details/details.js
 import {getData} from '../../app.js'
 Page({
-  data:{},
+  data:{
+    list:{
+      378:{
+
+      }
+    },
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
 
@@ -20,6 +26,7 @@ Page({
       url:url,
       success:function(data){
         if(data.code === 6000) {
+          
           that.setData({
             data: {
               title:options.title,
@@ -28,7 +35,7 @@ Page({
           })
         } else {
             that.setData({
-              data: data
+              data: data,
             })
         }
       }
@@ -89,6 +96,22 @@ Page({
         })
 
 
+  },
+  like:function(e){
+    var parms = e.currentTarget.dataset;
+    var list = this.data.list;
+    if(list[parms.id] == undefined ) {
+      list[parms.id]={};
+      list[parms.id].like = true;
+    }
+    else if(list[parms.id].like == undefined) 
+      list[parms.id].like = true;
+    else 
+      list[parms.id].like = !list[parms.id].like;
+    
+    this.setData({
+      list:list
+    })
   }
 
 })

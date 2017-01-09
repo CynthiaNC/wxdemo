@@ -9,7 +9,7 @@
     </view>
 
     <view class="tags-list">
-        <text class="tag" wx:for="{{data.tags}}" wx:key="{{item}}">
+        <text class="tag" wx:for="{{data.tags}}" wx:key="{{item}}" bindtap="like" data-id="{{item.count}}" style="{{list[item.count].like?'color:pink':''}}">
             {{item.name}}
         </text>        
     </view>
@@ -21,6 +21,7 @@
         </view>
         <button bindtap="toPay" class="to-pay" type="primary">在线阅读</button>
     </view>
+
     
     
 </view>

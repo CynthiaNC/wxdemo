@@ -6,7 +6,8 @@
     "pages/books/book",
     "pages/logs/logs",
     "pages/details/details",    
-    "pages/service/record"
+    "pages/service/record",
+    "pages/service/chart"
   ],
   "window":{
     "backgroundTextStyle":"light",
